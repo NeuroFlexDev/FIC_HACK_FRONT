@@ -47,12 +47,22 @@
   border-radius: 15px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-buttons:hover {
+  background-color: #d6c9ff;
+}
+
+.section-header {
+  margin-bottom: 1.85rem;
 }
 
 .agreements-container {
   display: flex;
   gap: 0.2rem;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 
 .agreements-card {
@@ -64,8 +74,15 @@
   padding: 1.25rem;
   height: 15.35rem;
   border-radius: 0.95rem;
+  transition: background-color 0.3s ease; /* Плавное изменение фона */
 }
 
-.agreements-card h3, p {
-    cursor: pointer;
+.agreements-card:hover {
+  background-color: #d6c9ff;
 }
+
+.agreements-card h3,
+p {
+  cursor: pointer;
+}
+

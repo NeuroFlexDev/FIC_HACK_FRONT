@@ -14,43 +14,43 @@ export const cardContentList = [
       title: "Договор купли-продажи",
       description:
         "Для оформления сделок с недвижимостью, автомобилями или товарами",
-      destLink: "/agreement#sell",
+      destLink: "/agreement/sell",
     },
     {
       title: "Договор аренды",
       description:
         "Для аренды жилой или коммерческой недвижимости, оборудования и других объектов.",
-        destLink: "/agreement#rent"
+        destLink: "/agreement/rent"
     },
     {
       title: "Договор оказания услуг",
       description:
         "Для заключения контрактов на оказание различных услуг, включая консультации и подрядные работы",
-        destLink: "/agreement#service"
+        destLink: "/agreement/service"
     },
     {
       title: "Трудовой договор",
       description:
         "Для оформления трудовых отношений, включая постоянные и временные контракты",
-        destLink: "/agreement#job"
+        destLink: "/agreement/job"
     },
     {
       title: "Договор подряда",
       description:
         "Для оформления соглашений на выполнение строительных или ремонтных работ",
-        destLink: "/agreement#seq"
+        destLink: "/agreement/seq"
     },
     {
       title: "Договор займа",
       description:
         "Для соглашений о передаче денежных средств с возможностью возврата с процентами или без",
-        destLink: "/agreement#duty"
+        destLink: "/agreement/duty"
     },
     {
       title: "Договор дарения",
       description:
         "Для оформления дарственных соглашений на имущество или денежные средства",
-        destLink: "/agreement#gift"
+        destLink: "/agreement/gift"
     },
   ],
   [
@@ -58,25 +58,25 @@ export const cardContentList = [
       title: "Исковое заявление",
       description:
         "Для подачи в суд по различным вопросам: имущество, семейные дела, задолженность",
-        destLink: "/claims#statement"
+        destLink: "/claims/statement"
     },
     {
       title: "Претензия",
       description:
         "Для досудебного урегулирования споров, например, по договорам или задолженности",
-        destLink: "/claims#claim"
+        destLink: "/claims/claim"
     },
     {
       title: "Апелляционная жалоба",
       description:
         "Для обжалования решений суда первой инстанции в вышестоящие инстанции",
-        destLink: "/claims#appeal"
+        destLink: "/claims/appeal"
     },
     {
       title: "Кассационная жалоба",
       description:
         "Для обжалования решений в Верховном суде, если есть основания для пересмотра дела",
-        destLink: "/claims#complaint"
+        destLink: "/claims/complaint"
     },
   ],
 
@@ -85,18 +85,18 @@ export const cardContentList = [
       title: "Жалоба в государственные органы",
       description:
         "Для подачи жалобы в налоговую, прокуратуру или другие госструктуры",
-        destLink: "/complaints#to-gov"
+        destLink: "/complaints/to-gov"
     },
     {
       title: "Обращение в Роспотребнадзор",
       description: "Для защиты прав потребителей и подачи жалоб на нарушения",
-      destLink: "/complaints#to-rospotrebnadzor"
+      destLink: "/complaints/to-rospotrebnadzor"
     },
     {
       title: "Жалоба на действия/бездействие должностных лиц",
       description:
         "Для обращения с жалобой на действия или бездействие государственных служащих.",
-        destLink: "/complaints#against-officials"
+        destLink: "/complaints/against-officials"
     },
   ],
   [
@@ -104,25 +104,25 @@ export const cardContentList = [
       title: "Общая доверенность",
       description:
         "Для назначения представителя для действий от имени лица в различных ситуациях",
-        destLink: "/proxies#common"
+        destLink: "/proxies/common"
     },
     {
       title: "Доверенность на автомобиль",
       description:
         "Для управления, продажи или передачи прав на транспортное средство",
-        destLink: "/proxies#vehicle"
+        destLink: "/proxies/vehicle"
     },
     {
       title: "Доверенность на недвижимость",
       description:
         "Для осуществления сделок с недвижимостью, включая покупку, продажу, аренду",
-        destLink: "/proxies#realty"
+        destLink: "/proxies/realty"
     },
     {
       title: "Банковская доверенность",
       description:
         "Для управления банковскими счетами или получения денежных средств",
-        destLink: "/proxies#bank"
+        destLink: "/proxies/bank"
     },
   ],
 
@@ -130,23 +130,23 @@ export const cardContentList = [
     {
       title: "Заявление на отпуск",
       description: "Для оформления отпускных дней для работников",
-      destLink: "/applications#vacation"
+      destLink: "/applications/vacation"
     },
     {
       title: "Заявление об увольнении",
       description: "Для подачи заявления об увольнении с места работы",
-      destLink: "/applications#dismissal"
+      destLink: "/applications/dismissal"
     },
     {
       title: "Заявление о расторжении договора",
       description: "Для расторжения договора аренды, займа или иных соглашений",
-      destLink: "/applications#agreement-dissolution"
+      destLink: "/applications/agreement-dissolution"
     },
     {
       title: "Уведомление о задержке исполнения обязательств",
       description:
         "Для уведомления о невозможности выполнить условия договора в срок",
-        destLink: "/notifications#delay"
+        destLink: "/notifications/delay"
     },
   ],
 
@@ -155,25 +155,25 @@ export const cardContentList = [
       title: "Учредительный договор",
       description:
         "Для регистрации нового бизнеса, его учредительных целей и условий",
-        destLink: "/agreement#founding"
+        destLink: "/agreement/founding"
     },
     {
       title: "Акт приема-передачи имущества",
       description:
         "Для передачи имущества от одного лица (например, компании) к другому",
-        destLink: "/act#receiving-transfer"
+        destLink: "/act/receiving-transfer"
     },
     {
       title: "Протокол собрания",
       description:
         "Для оформления решений собраний акционеров или учредителей компании",
-        destLink: "/protocols#meeting"
+        destLink: "/protocols/meeting"
     },
     {
       title: "Устав организации",
       description:
         "Для установления внутреннего регламента и принципов работы компании",
-        destLink: "/charters#organization"
+        destLink: "/charters/organization"
     },
   ],
 
@@ -181,19 +181,19 @@ export const cardContentList = [
     {
       title: "Нотариальные заявления",
       description: "Для заявлений, требующих нотариального удостоверения",
-      destLink: "/other#notarial"
+      destLink: "/other/notarial"
     },
     {
       title: "Соглашение о конфиденциальности (NDA)",
       description:
         "Для защиты информации, если стороны обязуются не раскрывать секреты",
-        destLink: "/other#nda"
+        destLink: "/other/nda"
     },
     {
       title: "Согласие на обработку персональных данных",
       description:
         "Для разрешения на обработку личной информации в соответствии с законами о защите данных.",
-        destLink: "/other#personal-data"
+        destLink: "/other/personal-data"
     },
   ],
 ];

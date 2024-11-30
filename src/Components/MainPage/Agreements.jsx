@@ -1,16 +1,23 @@
 import React from "react";
-import { v4 } from "uuid";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
+import { cardContentList } from "./lists";
 
-export const Agreements = ({ data }) => {
+export const Agreements = ({ sectionIndex }) => {
   const navigate = useNavigate();
+
+  const handleCardClick = (destLink, title) => {
+    navigate(destLink, { state: { title } }); // Передача title через state
+  };
+
+  const agreements = cardContentList[sectionIndex] || [];
+
   return (
     <div className="agreements-container">
-      {data.map((agreement) => (
+      {agreements.map((agreement, idx) => (
         <div
-          onClick={() => navigate(agreement.destLink)}
-          key={v4()}
+          key={idx}
           className="agreements-card"
+          onClick={() => handleCardClick(agreement.destLink, agreement.title)} // Обработчик клика
         >
           <h3>{agreement.title}</h3>
           <p>{agreement.description}</p>

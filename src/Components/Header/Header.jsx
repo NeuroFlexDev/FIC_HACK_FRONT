@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import "./headerStyles.css"
 
 const linksList = [
-  { link: '/templates', title: 'Шаблоны' },
+  // { link: '/templates', title: 'Шаблоны' },
   { link: '/document-types', title: 'Типы документов' },
   { link: '/history', title: 'История' },
   { link: '/profile', title: 'Профиль' },

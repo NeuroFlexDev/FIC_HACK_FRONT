@@ -1,20 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { v4 } from "uuid";
 import "./mainPageStyles.css";
 import { Agreements } from "./Agreements";
-import { buttonList, cardContentList } from "./lists";
-
+import { buttonList } from "./lists";
 
 export const MainPage = () => {
-
-
-  // Создаём массив ссылок (ref) для каждого раздела
   const sectionRefs = useRef(buttonList.map(() => React.createRef()));
-  // Функция для прокрутки до определённого элемента
+
   const scrollToSection = (index) => {
     sectionRefs.current[index].current.scrollIntoView({
-      behavior: "smooth", // Плавная прокрутка
-      block: "start", // Прокручивает так, чтобы элемент оказался в начале видимой области
+      behavior: "smooth",
+      block: "start",
     });
   };
 
@@ -40,16 +36,12 @@ export const MainPage = () => {
             ))}
           </div>
         </div>
-        {/* Секции для прокрутки */}
         <div style={{ marginTop: "50px" }}>
           {buttonList.map((section, index) => (
-            <div
-              key={v4()}
-              ref={sectionRefs.current[index]} // Привязываем ref
-            >
+            <div key={v4()} ref={sectionRefs.current[index]}>
               <h2>{section}</h2>
               <div className="sections-styles">
-                <Agreements data={cardContentList[index] || []} />
+                <Agreements sectionIndex={index} /> {/* Передаём индекс */}
               </div>
             </div>
           ))}
