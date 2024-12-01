@@ -144,3 +144,20 @@
   border-color: #C7EFD3;
 }
 
+.add-current-doc-btn {
+  position: absolute;
+  right: 14.5%;
+  width: 31.25rem;
+  height: 5rem;
+  font: 700 1.5rem "IBM Plex Sans", sans-serif;
+  background-color: #FFE5D9;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.additional-forms {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}

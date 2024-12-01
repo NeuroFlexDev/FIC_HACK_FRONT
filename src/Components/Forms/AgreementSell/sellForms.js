@@ -2,6 +2,7 @@ export const sellForm = [
   {
     id: "date",
     label: "Дата заключения договора",
+    required: true,
     type: "date",
     required: true,
     inputsCount: 1,
@@ -11,6 +12,7 @@ export const sellForm = [
   {
     id: "place",
     label: "Место заключения договора",
+    required: true,
     type: "text",
     required: true,
     inputsCount: 3,

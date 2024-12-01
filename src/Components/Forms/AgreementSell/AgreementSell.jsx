@@ -34,48 +34,19 @@ export const AgreementSell = ({ title }) => {
             id: "propertyData",
             label: "Данные объекта недвижимости",
             type: [
-              "text",
-              "text",
-              "text",
-              "text",
-              "number",
-              "number",
-              "number",
-              "number",
-              "selector",
-              "text",
-              "text",
-              "selector",
+              "text", "text", "text", "text", "number", "number", "number", 
+              "number", "selector", "text", "text", "selector",
             ],
             required: true,
             inputsCount: 12,
             placeholders: [
-              "Введите город",
-              "Введите район",
-              "Введите улицу",
-              "Номер дома",
-              "Этаж",
-              "Кадастровый номер объекта",
-              "Площадь",
-              "Наличие обременений",
-              "Этажность и характеристика здания",
-              "Налоги и сборы",
-              "Ремонт и состояние объекта",
-              "Документы на право собственности",
+              "Введите город", "Введите район", "Введите улицу", "Номер дома", 
+              "Этаж", "Кадастровый номер объекта", "Площадь", "Наличие обременений", 
+              "Этажность и характеристика здания", "Налоги и сборы", "Ремонт и состояние объекта", 
+              "Документы на право собственности"
             ],
             requiredFields: [
-              true,
-              true,
-              true,
-              true,
-              true,
-              true,
-              true,
-              true,
-              true,
-              true,
-              true,
-              true,
+              true, true, true, true, true, true, true, true, true, true, true, true,
             ],
           },
         ];
@@ -88,11 +59,7 @@ export const AgreementSell = ({ title }) => {
             type: ["text", "number", "text"],
             required: true,
             inputsCount: 3,
-            placeholders: [
-              "Марка автомобиля",
-              "Год выпуска автомобиля",
-              "VIN номер автомобиля",
-            ],
+            placeholders: ["Марка автомобиля", "Год выпуска автомобиля", "VIN номер автомобиля"],
             requiredFields: [true, true, true],
           },
         ];
@@ -137,7 +104,7 @@ export const AgreementSell = ({ title }) => {
     // Удаляем ошибку, если значение заполнено
     const errorKey = subField
       ? `${field.id}-${subField.id}-${index}`
-      : field.id;
+      : `${field.id}-${index}`;
     if (errors[errorKey]) {
       setErrors((prevErrors) => {
         const updatedErrors = { ...prevErrors };
@@ -157,11 +124,10 @@ export const AgreementSell = ({ title }) => {
     }
 
     const newErrors = {};
-    const allFields = [...sellForm, ...dynamicFields];
+    const allFields = [...sellForm, ...dynamicFields]; // Все поля (статические + динамические)
 
-    // Проверка всех полей, включая вложенные
     allFields.forEach((field) => {
-      // Проверка обязательных полей (не вложенных)
+      // Проверка обязательного поля на верхнем уровне
       if (
         field.required &&
         (!formValues[field.id] || formValues[field.id].length === 0)
@@ -169,7 +135,7 @@ export const AgreementSell = ({ title }) => {
         newErrors[field.id] = true;
       }
 
-      // Проверка обязательных полей внутри поля
+      // Проверка вложенных полей (requiredFields)
       if (field.requiredFields) {
         field.requiredFields.forEach((isRequired, index) => {
           const value = formValues[field.id]?.[index];
@@ -179,7 +145,7 @@ export const AgreementSell = ({ title }) => {
         });
       }
 
-      // Проверка вложенных полей (например, "Стороны договора")
+      // Проверка вложенных структур (например, parties)
       if (field.parties) {
         field.parties.forEach((party) => {
           const partyValues = formValues[field.id]?.[party.id] || [];
@@ -191,18 +157,32 @@ export const AgreementSell = ({ title }) => {
           });
         });
       }
+
+      // Проверка динамических полей (inputsCount)
+      if (field.inputsCount) {
+        for (let i = 0; i < field.inputsCount; i++) {
+          const value = formValues[field.id]?.[i];
+          if (field.requiredFields[i] && (!value || value.trim() === "")) {
+            newErrors[`${field.id}-${i}`] = true;
+          }
+        }
+      }
     });
 
+    // Устанавливаем ошибки, если они есть
     if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors); // Устанавливаем ошибки в состоянии
+      setErrors(newErrors);
+      console.log("Текущие значения формы:", formValues);
+      console.log("Найденные ошибки:", newErrors);
       return;
     }
 
-    console.log("Форма отправлена", formValues);
+    console.log("Форма успешно отправлена", formValues);
   };
 
   return (
     <div className="sell-form-container">
+       <button className="add-current-doc-btn">Прикрепить существующий документ</button>
       <h1>{title}</h1>
       <form onSubmit={handleSubmit}>
         {sellForm.map((field) => (
@@ -222,7 +202,7 @@ export const AgreementSell = ({ title }) => {
                       (_, inputIndex) => (
                         <div key={inputIndex} className="input-group">
                           <input
-                            autoComplete="off" // Отключаем автозаполнение
+                            autoComplete="off"
                             type={subField.type}
                             id={`${field.id}-${subField.id}-${inputIndex}`}
                             className={`form-input ${
@@ -264,11 +244,11 @@ export const AgreementSell = ({ title }) => {
                   (_, inputIndex) => (
                     <div key={inputIndex} className="input-group">
                       <input
-                        autoComplete="off" // Отключаем автозаполнение
+                        autoComplete="off"
                         type={field.type}
                         id={`${field.id}-${inputIndex}`}
                         className={`form-input ${
-                          errors[field.id]?.[inputIndex] ? "input-error" : ""
+                          errors[`${field.id}-${inputIndex}`] ? "input-error" : ""
                         }`}
                         placeholder={`Введите ${field.placeholders[inputIndex]}`}
                         value={formValues[field.id]?.[inputIndex] || ""}
@@ -279,7 +259,7 @@ export const AgreementSell = ({ title }) => {
                           )}rem`,
                         }}
                       />
-                      {errors[field.id]?.[inputIndex] && (
+                      {errors[`${field.id}-${inputIndex}`] && (
                         <span className="error-message">
                           Поле обязательно для заполнения
                         </span>
