@@ -10,12 +10,12 @@ export const AgreementSell = ({ title }) => {
   const [dynamicFields, setDynamicFields] = useState([]);
 
   // Функция для вычисления минимальной ширины в зависимости от длины placeholder
-  const getInputWidth = (placeholder) => {
-    const baseWidth = placeholder.length; // Ширина, основанная на длине текста
-    const adjustedWidth = Math.min(Math.max(baseWidth, 10), 30); // Минимум 10rem, максимум 30rem
-    return adjustedWidth;
-  };
-  
+ const getInputWidth = (placeholder) => {
+  const baseWidth = placeholder.length; // Ширина, основанная на длине текста
+  const adjustedWidth = Math.min(Math.max(baseWidth, 10), 30); // Минимум 10rem, максимум 30rem
+  return adjustedWidth;
+};
+
 
   // Обработчик выбора предмета договора
   const handleSubjectSelection = (subject) => {

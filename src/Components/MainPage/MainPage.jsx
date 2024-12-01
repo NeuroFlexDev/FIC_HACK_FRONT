@@ -39,7 +39,7 @@ export const MainPage = () => {
         <div className="form-list-cards" style={{ marginTop: "50px" }}>
           {buttonList.map((section, index) => (
             <div key={v4()} ref={sectionRefs.current[index]}>
-              <h2>{section}</h2>
+              <h2 className="section-title">{section}</h2>
               <div className="sections-styles">
                 <Agreements sectionIndex={index} /> {/* Передаём индекс */}
               </div>

@@ -12,20 +12,18 @@ export const FormField = ({ field, formValues, errors, handleChange, getInputWid
         {/* Проверка на вложенные поля, если они есть */}
         {Array.from({ length: field.inputsCount }).map((_, inputIndex) => (
           <div key={inputIndex} className="input-group">
-            <input
-              autoComplete="off"
-              type={Array.isArray(field.type) ? field.type[inputIndex] : field.type}
-              id={`${field.id}-${inputIndex}`}
-              className={`form-input ${errors[`${field.id}-${inputIndex}`] ? "input-error" : ""}`}
-              placeholder={`Введите ${field.placeholders[inputIndex]}`}
-              value={formValues[field.id]?.[inputIndex] || ""}
-              onChange={(e) => handleChange(e, field, inputIndex)}
-              style={{
-                width: `clamp(8rem, ${getInputWidth(field.placeholders[inputIndex])}rem, 30rem)`,
-                minWidth: '8rem', // Минимальная ширина
-                maxWidth: '30rem', // Максимальная ширина
-              }}
-            />
+           <input
+  autoComplete="off"
+  type={field.type}
+  id={`${field.id}-${inputIndex}`}
+  className={`form-input form-input-dynamic ${
+    errors[`${field.id}-${inputIndex}`] ? "input-error" : ""
+  }`}
+  placeholder={`Введите ${field.placeholders[inputIndex]}`}
+  value={formValues[field.id]?.[inputIndex] || ""}
+  onChange={(e) => handleChange(e, field, inputIndex)}
+/>
+
             {errors[`${field.id}-${inputIndex}`] && (
               <span className="error-message">
                 Поле обязательно для заполнения
