@@ -29,7 +29,7 @@
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem
+  gap: 2.2rem;
 }
 
 .form-label {
@@ -54,7 +54,6 @@
 
 .form-input::placeholder {
   font-family: "IBM Plex Sans", sans-serif;
-
 }
 
 /* Группы инпутов */
@@ -70,7 +69,6 @@
   gap: 1rem; /* Расстояние между элементами */
   flex-wrap: wrap;
 }
-
 
 /* Обязательные поля */
 .required {
@@ -94,7 +92,7 @@
   display: block;
   width: auto;
   padding: 0.8rem;
-  background-color: #C7EFD3;
+  background-color: #c7efd3;
   color: black;
   font-size: 1rem;
   font-weight: bold;
@@ -103,7 +101,6 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: "IBM Plex Sans", sans-serif;
-
 }
 
 .submit-button:hover {
@@ -115,8 +112,6 @@
   display: flex;
   gap: 2.2rem;
 }
-
-
 
 /* Кнопки выбора предмета договора */
 .form-button {
@@ -134,14 +129,14 @@
 
 .form-button:hover {
   background-color: #f1f1f1;
-  border-color: #C7EFD3;
+  border-color: #c7efd3;
   color: black;
 }
 
 .form-button.active {
-  background-color: #C7EFD3;
+  background-color: #c7efd3;
   color: black;
-  border-color: #C7EFD3;
+  border-color: #c7efd3;
 }
 
 .add-current-doc-btn {
@@ -150,7 +145,7 @@
   width: 31.25rem;
   height: 5rem;
   font: 700 1.5rem "IBM Plex Sans", sans-serif;
-  background-color: #FFE5D9;
+  background-color: #ffe5d9;
   border: none;
   border-radius: 15px;
   cursor: pointer;
@@ -160,4 +155,82 @@
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
+}
+
+/* Основные стили остаются без изменений */
+
+/* Адаптивные стили для AgreementSell */
+@media (max-width: 1200px) {
+  .sell-form-container {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+  .form-input {
+    min-width: 6rem; /* Уменьшаем минимальную ширину */
+    max-width: 20rem; /* Уменьшаем максимальную ширину */
+  }
+
+  .input-wrapper {
+    gap: 0.8rem;
+  }
+
+  .form-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .add-current-doc-btn {
+    align-self: center;
+    position: static;
+    width: 25rem;
+    height: 4rem;
+    font-size: 1.2rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .sell-form-container {
+    padding: 1rem;
+  }
+
+  .navigation-content-title {
+    text-align: center;
+  }
+
+  .form-list-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .form-input {
+    min-width: 4rem; /* Ещё меньше для мобильных устройств */
+    max-width: 15rem;
+  }
+  .form-buttons {
+    flex-wrap: wrap;
+  }
+  .form-button {
+    width: 100%;
+    height: 2.5rem;
+  }
+
+  .add-current-doc-btn {
+    width: 100%;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sell-form-container {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .submit-button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
 }

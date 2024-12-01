@@ -36,7 +36,7 @@ export const MainPage = () => {
             ))}
           </div>
         </div>
-        <div style={{ marginTop: "50px" }}>
+        <div className="form-list-cards" style={{ marginTop: "50px" }}>
           {buttonList.map((section, index) => (
             <div key={v4()} ref={sectionRefs.current[index]}>
               <h2>{section}</h2>

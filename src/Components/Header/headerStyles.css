@@ -23,3 +23,54 @@ header {
   align-items: center;
   justify-content: flex-end;
 }
+
+
+
+/* Основной стиль остается прежним */
+
+/* Адаптивные стили для header и ссылок */
+@media (max-width: 1200px) {
+  .header-list {
+    gap: 2rem; /* Уменьшаем расстояние между элементами */
+    margin-right: 100px; /* Уменьшаем отступ */
+  }
+
+  .header-links a {
+    font-size: 1.2rem; /* Уменьшаем размер шрифта */
+  }
+
+  header {
+    height: 80px; /* Уменьшаем высоту */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-list {
+    flex-direction: column; /* Делаем элементы вертикальными */
+    align-items: center; /* Центрируем */
+    margin-right: 0;
+    gap: 1rem;
+  }
+
+  header {
+    justify-content: center; /* Центрируем содержимое */
+    height: auto;
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-list {
+    gap: 0.5rem;
+  }
+
+  .header-links a {
+    font-size: 1rem;
+  }
+
+  header {
+    height: auto;
+    padding: 10px 5px;
+  }
+}

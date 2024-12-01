@@ -86,3 +86,58 @@ p {
   cursor: pointer;
 }
 
+/* Основные стили остаются без изменений */
+
+/* Адаптивные стили для mainPage */
+@media (max-width: 1200px) {
+  .main-page {
+    width: 90%;
+  }
+
+  .navigation-content {
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .section-buttons-container {
+    column-gap: 2rem;
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation-content-title h1 {
+    font-size: 1.5rem;
+  }
+  .agreements-container {
+    justify-content: center; /* Центрируем элементы на больших экранах */
+    text-align: center;
+  }
+  .navigation-content-title h3 {
+    font-size: 1.2rem;
+  }
+
+  .section-buttons-container {
+    flex-direction: column;
+  }
+
+  .section-buttons {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-page {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .navigation-content {
+    width: 100%;
+  }
+
+  .agreements-card {
+    width: 100%;
+    height: auto;
+  }
+}

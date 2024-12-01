@@ -11,10 +11,11 @@ export const AgreementSell = ({ title }) => {
 
   // Функция для вычисления минимальной ширины в зависимости от длины placeholder
   const getInputWidth = (placeholder) => {
-    const baseLength = 10; // Базовая длина инпута
-    const extraLength = placeholder.length * 0.5; // Дополнительная длина для каждого символа в placeholder
-    return Math.max(baseLength + extraLength, 15); // Убедимся, что минимальная ширина 15
+    const baseWidth = placeholder.length; // Ширина, основанная на длине текста
+    const adjustedWidth = Math.min(Math.max(baseWidth, 10), 30); // Минимум 10rem, максимум 30rem
+    return adjustedWidth;
   };
+  
 
   // Обработчик выбора предмета договора
   const handleSubjectSelection = (subject) => {

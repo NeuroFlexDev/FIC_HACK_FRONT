@@ -21,7 +21,9 @@ export const FormField = ({ field, formValues, errors, handleChange, getInputWid
               value={formValues[field.id]?.[inputIndex] || ""}
               onChange={(e) => handleChange(e, field, inputIndex)}
               style={{
-                width: `${getInputWidth(field.placeholders[inputIndex])}rem`,
+                width: `clamp(8rem, ${getInputWidth(field.placeholders[inputIndex])}rem, 30rem)`,
+                minWidth: '8rem', // Минимальная ширина
+                maxWidth: '30rem', // Максимальная ширина
               }}
             />
             {errors[`${field.id}-${inputIndex}`] && (

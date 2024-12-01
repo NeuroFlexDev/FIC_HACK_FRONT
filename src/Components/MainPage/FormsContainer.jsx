@@ -1,12 +1,10 @@
 import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { AgreementSell } from "../Forms/AgreementSell/AgreementSell";
-import { AgreementRent } from "../Forms/AgreementRent/AgreementRent";
-import "./FormsContainer.css"
+
 
 const formComponents = {
   sell: AgreementSell,
-  rent: AgreementRent
   // Добавьте другие компоненты здесь
 };
 
